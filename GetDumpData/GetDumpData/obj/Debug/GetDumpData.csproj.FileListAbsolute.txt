@@ -1,0 +1,5 @@
+c:\users\robert\documents\visual studio 2015\Projects\GetDumpData\GetDumpData\bin\Debug\GetDumpData.exe.config
+c:\users\robert\documents\visual studio 2015\Projects\GetDumpData\GetDumpData\bin\Debug\GetDumpData.exe
+c:\users\robert\documents\visual studio 2015\Projects\GetDumpData\GetDumpData\bin\Debug\GetDumpData.pdb
+c:\users\robert\documents\visual studio 2015\Projects\GetDumpData\GetDumpData\obj\Debug\GetDumpData.exe
+c:\users\robert\documents\visual studio 2015\Projects\GetDumpData\GetDumpData\obj\Debug\GetDumpData.pdb
