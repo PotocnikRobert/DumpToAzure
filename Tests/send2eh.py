@@ -4,7 +4,7 @@ import socket
 from azure.servicebus import ServiceBusService
 
 
-key_name = "key_name;
+key_name = "key_name";
 key_value = "key";
 
 sbs = ServiceBusService("flightdata",shared_access_key_name=key_name, shared_access_key_value=key_value);
@@ -28,14 +28,8 @@ while(True):
 	msg = msg[2:]
 	msg = msg[:-5]
 	list = msg.split(",")
-	
-	print("______________________")
-	for item in list:
-    		print(item)
-	print("______________________")
 	result = ""
 	result += "{"
-	
 	result += '"MessageType": "'
 	result += list[0]
 	result += '", '
@@ -50,15 +44,61 @@ while(True):
 	result += '", '
 	result += '"HexIdent": "'
 	result += list[4]
+	result += '", '
+	result += '"FlightID": "'
+	result += list[5]
+	result += '", '
+	result += '"FlightID": "'
+	result += list[6]
+	result += '", '
+	result += '"GeneratedDate": "'
+	result += list[7]
+	result += '", '
+	result += '"GeneratedTime": "'
+	result += list[8]
+	result += '", '
+	result += '"LoggedDate": "'
+	result += list[9]
+	result += '", '
+	result += '"LoggedTime": "'
+	result += list[10]
+	result += '", '
+	result += '"CallSign": "'
+	result += list[11]
+	result += '", '
+	result += '"Altitude": "'
+	result += list[12]
+	result += '", '
+	result += '"GroundSpeed": "'
+	result += list[13]
+	result += '", '
+	result += '"Track": "'
+	result += list[14]
+	result += '", '
+	result += '"Latitude": "'
+	result += list[15]
+	result += '", '
+	result += '"Longitude": "'
+	result += list[16]
+	result += '", '
+	result += '"VerticalRate": "'
+	result += list[17]
+	result += '", '
+	result += '"Squawk": "'
+	result += list[18]
+	result += '", '
+	result += '"AlertSqCh": "'
+	result += list[19]
+	result += '", '
+	result += '"Emergency": "'
+	result += list[20]
+	result += '", '
+	result += '"SPI": "'
+	result += list[21]
+	result += '", '
+	result += '"IsOnGround": "'
+	result += list[22]
 	result += '" '
 	result += "}"
 	print(result)
-
-
-	#print "received data:", data
-
-#while(True):
-#	print('sending...')
-#	sbs.send_event('radardata', '{ "DeviceId": "smokerpi", "Temperature": "37.0" }')
-#	print('sent!')
-#	time.sleep(10)
+	sbs.send_event('radardata', result)
